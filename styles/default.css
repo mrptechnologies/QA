@@ -1,0 +1,113 @@
+
+
+
+p, body, td {
+
+	font-size:11px;
+	font-family:Tahoma;
+	color:#000000;
+	
+}
+
+a {
+
+	font-size:11px;
+	font-family:Tahoma;
+	color:#000000;
+	text-decoration:none;
+}
+
+a:hover {
+
+	text-decoration:underline;
+}
+
+.scroller{
+
+        font-size:11px;
+	font-family:Tahoma;
+        color:#000000;
+	text-decoration:none;
+	font-weight:normal;
+}
+
+
+.scrolldate{
+
+        font-size:11px;
+        color:#ea7800;
+	font-weight:normal;
+}
+
+
+
+.copyright{
+
+	font-size:10px;
+	font-family:verdana;
+}
+
+.smalltext{
+
+	font-size:11px;
+	font-family:Tahoma;
+}
+
+.smalltextorange{
+
+	font-size:11px;
+	font-family:Tahoma;
+	color:#ea7800;
+}
+
+.smalltextred{
+
+	font-size:11px;
+	font-family:Tahoma;
+	color:#e63300;
+}
+
+
+
+.clientlist{
+
+	font-size:11px;
+	font-family:Tahoma;
+	margin-left:15px;
+}
+
+.clientlist ul{
+
+	font-size:11px;
+	font-family:Tahoma;
+	margin-left:20px;
+}
+
+.clientlist li{
+
+	font-size:11px;
+	font-family:Tahoma;
+	margin-top:3px;
+}
+
+
+ul {
+	padding:0;
+	margin:0;
+	margin-left:15px;
+	margin-top:7px;
+	margin-bottom:12px;
+	list-style:none;
+	font-size:10px;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:Verdana;
+}
+
+ul ul{
+	
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+	font-family:Verdana;
+}

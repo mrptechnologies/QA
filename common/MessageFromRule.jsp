@@ -1,0 +1,1 @@
+<%if(request.getAttribute("message")!=null){out.println(request.getAttribute("message").toString());}%>

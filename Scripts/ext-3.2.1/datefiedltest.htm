@@ -1,0 +1,80 @@
+
+<html>
+<head>
+<title>Hello World Window</title>
+<link rel="stylesheet" type="text/css" href="resources/css/ext-all.css" />
+<script type="text/javascript" src="adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="ext-all.js"></script>
+<script type="text/javascript">
+
+
+Ext.onReady(function(){
+
+
+
+  var formPanel1 = new Ext.Panel({
+    applyTo:'mainContent',
+    hideLabels:true,
+    width:120,
+    autoHeight:true,
+	bodyBorder : false,
+    border : false,
+    frame:false,
+    items:[{
+      xtype:'datefield',
+      name:'dob1',
+      id:'dob1',
+      width:120,
+      allowBlank:true,
+      minValue: new Date('06/06/2010')
+    }]
+  });
+
+ var dateDiv1 = document.getElementById('mainContent').innerHTML;
+  alert(dateDiv1);
+
+  var formPanel2 = new Ext.Panel({
+    applyTo:'mainContent2',
+    hideLabels:true,
+    width:120,
+    autoHeight:true,
+	bodyBorder : false,
+    border : false,
+    frame:false,
+    items:[{
+      xtype:'datefield',
+      name:'dob22',
+      id:'dob2',
+      width:120,
+      allowBlank:true
+    }]
+  });
+	var dateDiv2 = document.getElementById('mainContent2').innerHTML;
+  alert(dateDiv2);
+
+var clickHandler = function() {
+		if(document.getElementById('dob1').value != ""){
+			var datefield = Ext.getCmp('dob2');
+			var myDate = new Date(document.getElementById('dob1').value);
+			datefield.setMinValue(myDate);
+		}
+
+	};
+Ext.EventManager.on('mainContent2', 'click', clickHandler);
+});
+</script>
+</head>
+
+<body>
+
+    <div id="mainContent">
+    </div>
+    <div id="mainContent2">
+    </div>
+
+<form>
+</form>
+
+</body>
+
+</html>

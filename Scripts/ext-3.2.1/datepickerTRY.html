@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="resources/css/ext-all.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>EXT JS Datepicker Example</title>
+
+</head>
+
+<body>
+
+<label style="z-index:15">Enter a date: </label><input style="z-index:14" type="text" id="dateField"><button style="z-index:13" id="openCalendar">Open Calendar</button><div style="z-index:10" id="calendar"></div>
+<label style="z-index:9">Enter a date1: </label><input style="z-index:8" type="text" id="dateField1"><button style="z-index:7" id="openCalendar1">Open Calendar</button><div style="z-index:6" id="calendar1"></div>
+
+<script type="text/javascript" src="adapter/ext/ext-base.js"></script>
+
+<script type="text/javascript" src="ext-all.js"></script>
+
+<script type="text/javascript">
+
+
+
+//set local blank image
+
+Ext.BLANK_IMAGE_URL = 'ext/resources/images/default/s.gif';
+
+
+
+//define function to be executed when page loaded
+
+Ext.onReady(function() {
+
+
+
+//define select handler
+
+var selectHandler = function(myDP, date) {
+
+
+
+//get the text field
+
+var field = document.getElementById('dateField');
+
+
+
+//add the selected date to the field
+
+field.value = date.format('m/d/Y');
+
+
+
+//hide the date picker
+
+myDP.hide();
+
+
+
+};
+
+
+
+//create the date picker
+
+var myDP = new Ext.DatePicker(
+
+{
+
+startDay: 1,
+
+listeners: {
+
+'select':selectHandler
+
+}
+
+}
+
+);
+
+
+
+//render the date picker
+
+myDP.render('calendar');
+
+
+
+//hide date picker straight away
+
+myDP.hide();
+
+
+
+//define click handler
+
+var clickHandler = function() {
+
+
+
+//show the date picker
+
+myDP.show();
+
+
+
+};
+
+
+
+//add listener for button click
+
+Ext.EventManager.on('openCalendar', 'click', clickHandler);
+
+
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+
+
+//set local blank image
+
+Ext.BLANK_IMAGE_URL = 'ext/resources/images/default/s.gif';
+
+
+
+//define function to be executed when page loaded
+
+Ext.onReady(function() {
+
+
+
+//define select handler
+
+var selectHandler = function(myDP, date) {
+
+
+
+//get the text field
+
+var field = document.getElementById('dateField1');
+
+
+
+//add the selected date to the field
+
+field.value = date.format('m/d/Y');
+
+
+
+//hide the date picker
+
+myDP.hide();
+
+
+
+};
+
+
+
+//create the date picker
+
+var myDP = new Ext.DatePicker(
+
+{
+
+startDay: 1,
+
+listeners: {
+
+'select':selectHandler
+
+}
+
+}
+
+);
+
+
+
+//render the date picker
+
+myDP.render('calendar1');
+
+
+
+//hide date picker straight away
+
+myDP.hide();
+
+
+
+//define click handler
+
+var clickHandler = function() {
+
+
+
+//show the date picker
+
+myDP.show();
+
+
+
+};
+
+
+
+//add listener for button click
+
+Ext.EventManager.on('openCalendar1', 'click', clickHandler);
+
+
+
+});
+
+</script>
+
+
+</body>
+
+
+</html>

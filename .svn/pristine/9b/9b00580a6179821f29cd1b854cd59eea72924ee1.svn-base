@@ -1,0 +1,52 @@
+/* ######### Default class for drop down menus ######### */
+
+.anylinkcss{
+position: absolute;
+left: 0;
+top: 0;
+visibility: hidden;
+margin-top:4px;
+border: 1px solid #1e2025;
+border-bottom:none;
+text-align:left;
+line-height: 18px;
+z-index: 100; /* zIndex should be greater than that of shadow's below */
+background-color:#405884;
+width: 135px; /* default width for menu */
+}
+
+.anylinkcss ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.anylinkcss ul li a{
+font-size:11px;
+font-weight:bold;
+width: 125px;
+height:21px;
+display: block;
+color:#fff;
+border-bottom: 1px solid #1e2025;
+padding: 5px 0 0 10px;
+text-decoration: none;
+text-indent: 0px;
+}
+
+.anylinkcss a:hover{ /*hover background color*/
+background: #567cc0;
+color: #fff;
+}
+
+/* ######### class for shadow DIV ######### */
+
+
+.anylinkshadow{ /*CSS for shadow. Keep this as is */
+position: absolute;
+left: 0;
+top: 0;
+z-index: 99; /*zIndex for shadow*/
+background: black;
+visibility: hidden;
+}

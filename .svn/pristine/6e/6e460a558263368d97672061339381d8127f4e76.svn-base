@@ -1,0 +1,260 @@
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/dms-html.tld" prefix="dmshtml" %>
+<%@ page import="com.dms.ejb.entity.DMSEntityDetail"%>
+
+		<%
+			
+			String agencyIdTemp="";
+			if(request.getParameter("answer(Object::Agency::AgencyId)")!=null)
+			{
+				agencyIdTemp=request.getParameter("answer(Object::Agency::AgencyId)");
+			}
+		
+			String customerId="";
+			if(request.getParameter("answer(Object::Customer::CustomerId)")!=null)
+			{
+				customerId=request.getParameter("answer(Object::Customer::CustomerId)");
+			}
+			
+			String strParetQuoteStatus="";
+			if(request.getParameter("answer(Object::Quote::QuoteStatus)")!=null)
+			{
+				strParetQuoteStatus=request.getParameter("answer(Object::Quote::QuoteStatus)");
+			}
+
+			String strParentQuoteId="";
+			if(request.getParameter("answer(parentQuoteId)")!=null)
+			{
+				strParentQuoteId=request.getParameter("answer(parentQuoteId)");
+			}
+
+			String ProductVerId="";
+			if(request.getParameter("answer(Object::Quote::ProductVerId)")!=null)
+			{
+				ProductVerId=request.getParameter("answer(Object::Quote::ProductVerId)");
+			}
+			String compositeRate="";
+			if(request.getParameter("answer(Object::Plan::CompositeRateFlag)")!=null){
+				compositeRate=request.getParameter("answer(Object::Plan::CompositeRateFlag)");
+			}
+		
+		%>				
+<script type="text/javascript">
+function disableButton(frm){
+document.getElementById("ConfirmSubmit").disabled = true;
+}
+</script>
+		
+		
+<html:form action="/SaveSubmittedStatus" onsubmit="disableButton(this)">
+<html:hidden property="answer(dbname)" value='<%=com.dms.web.util.DbUtils.getWriteDS(pageContext)%>'/>
+
+
+
+<bean:define id="paretQuoteStatus" name="AddQuote" property="answer(Object::Quote::QuoteStatus)"/>
+<%
+String memberAssociation="";
+if(request.getParameter("answer(Object::Quote::MemberAssociation)")!=null){
+	memberAssociation=request.getParameter("answer(Object::Quote::MemberAssociation)");
+}
+%>
+
+<%
+if(request.getParameter("quoteId")!=null)
+			{
+		%>
+<html:hidden name="AddQuote" property="quoteId" value="<%=request.getParameter("quoteId")%>"/>
+<%
+			}			
+%>
+<table WIDTH="760px" ALIGN="center" border="0" CELLSPACING="0" CELLPADDING="0">
+	<tr>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table WIDTH="760px" ALIGN="left" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+				<tr>
+					<td >
+						<table WIDTH="760px" ALIGN="left" border="0" CELLSPACING="0" CELLPADDING="0">
+							<tr>
+								<td>
+									<jsp:include page="../common/CustomerAgencyLinkspage.jsp" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table WIDTH="760px" ALIGN="center" border="0" CELLSPACING="0" CELLPADDING="0">
+		
+										<tr>
+											<td >
+												<table width="60%" align="Left" border="0">
+													<jsp:include page="../common/QuoteHeader.jsp">
+														<jsp:param name="parentQuoteId" value="<%=""+strParentQuoteId%>" />
+														<jsp:param name="productVerId" value="<%=""+ProductVerId%>" />
+														<jsp:param name="heading" value="<%="SUBMIT QUOTE"%>" />
+													</jsp:include>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												&nbsp;
+											</td>
+										</tr>
+
+										<tr>
+											<td align="left">
+	
+												<table WIDTH="100%" ALIGN="left" border="0" CELLSPACING="2" CELLPADDING="0">
+													<tr>
+														<td>
+
+															<bean:define id="userId" property="answer(Object::UserDetail::userName)" name="LoginPage" scope="session"/> 
+															<bean:define id="ownerId" property="answer(Object::UserDetail::ownerId)" name="LoginPage" scope="session"/> 
+															<html:hidden property="answer(ownerId)" value="<%=ownerId.toString()%>" />
+														</td>
+													
+		
+		
+		
+														<bean:define id="parentQuoteId" name="AddQuote" property="answer(Object::Quote::Id)"/>
+														
+															<%
+															if(request.getParameter("answer(Object::Customer::CustomerId)")!=null)
+															{
+												             
+															%>
+															<td>
+															<html:hidden name="AddQuote" property="answer(Object::Customer::CustomerId)" value="<%=customerId.toString()%>"/>
+															</td>
+		
+
+																<%
+																	}
+																%>
+																</tr><tr>
+														<td colspan="2" class="links">
+															<a href="../GetUWQuoteSummaryAction.do?TabPanelName=Quote_Panel&answer(Object::Customer::CustomerId)=<%=customerId.toString()%>&answer(Object::Agency::AgencyId)=<%=agencyIdTemp.toString()%>&answer(QuoteId)=<%=strParentQuoteId.toString()%>&answer(parentQuoteId)=<%=strParentQuoteId.toString()%>">Quote Summary</a>
+														</td>
+													</tr>
+													<tr>
+														<td  colspan="8" align="center" class="sectionhead"></td>
+													</tr>
+													<bean:parameter id="actionStatus" name="action" value="CreateQuoteProposal"/>
+													<logic:notEqual name="actionStatus" value="submit">
+													<dmshtml:dms_static_with_connector ruleName='privilage' property='<%=new String[]{"DISPLAY_RULES_MSG"}%>' connector='or' negated="true">
+													<tr>
+														<td class="Error">
+																			
+															<logic:present name="MESSAGE_LIST" scope="request">
+															<ol>
+																<logic:iterate id="message" name="MESSAGE_LIST">
+																<li><bean:write name="message"/></li>
+																</logic:iterate>
+															</ol>			
+															</logic:present>
+																					
+													</td></tr>
+													</dmshtml:dms_static_with_connector>
+													</logic:notEqual>
+													<tr>
+														<td>
+															<table width="100%" border="0" align="left">
+																<tr>
+																	<td class="TextMatter" align="right">
+																		Do You Really want to Submit the Quote									
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+															
+													<tr>
+														
+														<td colspan="2" class="links">
+														<dmshtml:dms_isPresent property="<%=new String[]{"5"}%>" value="<%=ownerId.toString()%>" negated="true">
+															<a href='../ApplicationPdf.go?TabPanelName=<%=""+request.getParameter("TabPanelName") %>&answer(DocumentType)=APPLICATION&answer(QuoteId)=<%= strParentQuoteId.toString()%>&answer(OwnerId)=<%=ownerId.toString() %>&answer(Object::Customer::CustomerId)=<%=""+customerId%>&answer(QuoteStatus)=<%=paretQuoteStatus.toString()%>' target="_new"><img src="../Images/pdficon.gif" width="15" border="0" alt="PDF">Application PDF</a><br/> 
+														</dmshtml:dms_isPresent>
+														</td>												
+													</tr>
+														
+													<tr><td>
+														<html:hidden property="answer(Object::Quote::QuoteStatus)" value="Submitted" />
+													</td></tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<table WIDTH="75%" ALIGN="center" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+										<tr>
+											<td>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td align="center" class="links" colspan="4">
+												<dmshtml:dms_isPresent property="<%=new String[]{"Sold", "Lost", "Rejected"}%>" value="<%=strParetQuoteStatus.toString()%>" >
+
+													<INPUT TYPE="submit" value="Yes" class="sbttn" id="ConfirmSubmit">
+	
+												</dmshtml:dms_isPresent>
+											</td>
+
+											<td>
+												<dmshtml:dms_button value="No" property="answer(back)" styleClass="sbttn" onclick="javascript:history.go(-1);"/>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+			<html:hidden name="AddQuote" property="formName" value="form::CREATEQUOTEVERSION"/>
+			 <html:hidden name="AddQuote" property="answer(Object::Product::ProductState)" value="RELEASED"/>
+			 <html:hidden property="answer(Object::Agency::AgencyId)" value="<%=agencyIdTemp.toString()%>"/>
+			<html:hidden property="page" value="7" />
+			
+			
+			<!-- New hidder variables -->
+			
+			<html:hidden name="UWWorkSheet" property="answer(Object::Product::ProductState)" value="RELEASED"/>
+			<html:hidden property="answer(QuoteId)" value="<%=""+strParentQuoteId%>" />
+			<html:hidden property="answer(parentQuoteId)" value="<%=""+strParentQuoteId%>" />
+			<html:hidden property="answer(Quote::Page)" value="StatusChange" />
+			<html:hidden property="answer(Object::Plan::CreatedBy)" value="<%=userId.toString()%>" />
+			<html:hidden property="answer(Object::Plan::UpdatedBy)" value="<%=userId.toString()%>" />
+			<html:hidden property="answer(Object::Quote::CreatedBy)" value="<%=userId.toString()%>" />
+			<html:hidden property="answer(Object::Quote::UpdatedBy)" value="<%=userId.toString()%>" />
+			<html:hidden property="answer(Object::Plan::dbName)" value="<%=com.dms.web.util.DbUtils.getWriteDS(pageContext)%>"/>
+			<html:hidden property="answer(Object::Quote::dbName)" value="<%=com.dms.web.util.DbUtils.getWriteDS(pageContext)%>"/>
+			<html:hidden property="answer(Object::Quote::LockStatus)" value="Locked" />
+			<html:hidden property="answer(Object::Quote::MemberAssociation)" value='<%=""+memberAssociation%>' />
+			<html:hidden property="answer(Object::Plan::CompositeRateFlag)" value='<%=""+compositeRate%>' />
+			<html:hidden property="TabPanelName" value="<%=""+request.getParameter("TabPanelName")%>" />
+		</td>
+	</tr>
+
+</table>    
+
+
+
+</html:form>
+
+

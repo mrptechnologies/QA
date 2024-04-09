@@ -1,0 +1,45 @@
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>Multiple Languages</title>
+<link rel="stylesheet" type="text/css" href="resources/css/ext-all.css" />
+<script type="text/javascript" src="adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="ext-all.js"></script>
+</head>
+<body class="x-gray">
+<br/>
+<br/>
+<div id="datefield1"></div>
+<br/>
+
+<script type="text/javascript">
+
+
+
+var datefield = new Ext.FormPanel({
+                renderTo: 'datefield1',
+                labelWidth: 1,
+                 hideLabels:true,
+				 width:120,
+				 autoHeight:true,
+				bodyBorder : false,
+				border : true,
+    			frame:false,
+		        width: 120,
+                defaults: {width: 120},
+                defaultType: 'datefield',
+		items: [{
+                    fieldLabel: ''
+                }]
+               });
+
+
+</script>
+
+
+</body>
+</html>
+
+
+

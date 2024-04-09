@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-web>
+
+ <security-domain>java:/jaas/danetworkflow</security-domain> 
+
+  <ejb-ref>
+    <ejb-ref-name>ejb/DanetUtil</ejb-ref-name>
+    <jndi-name>de.danet.an.workflow.util-lib.Util</jndi-name>
+  </ejb-ref>
+
+  <ejb-ref>
+    <ejb-ref-name>ejb/StaffDirectoryBean</ejb-ref-name>
+    <jndi-name>de.danet.an.workflow.StaffDirectory</jndi-name>
+  </ejb-ref>
+
+   <ejb-ref>
+    <ejb-ref-name>ejb/ActivityDirectory</ejb-ref-name>
+    <jndi-name>de.danet.an.webform.ejbs.ActivityDirectory</jndi-name>
+  </ejb-ref>
+
+   <ejb-ref>
+	<ejb-ref-name>ejb/WorkflowEngine</ejb-ref-name>
+	<jndi-name>de.danet.an.workflow.Engine</jndi-name>
+   </ejb-ref>
+
+   <ejb-ref>
+	<ejb-ref-name>saj.ejbs.TestSession</ejb-ref-name>
+	<jndi-name>saj.ejbs.TestSession</jndi-name>
+   </ejb-ref>
+
+   <ejb-ref>
+	<ejb-ref-name>com.workflow.ejb.ServiceWorkflow</ejb-ref-name>
+	<jndi-name>com.workflow.ejb.ServiceWorkflow</jndi-name>
+   </ejb-ref>
+
+   <ejb-ref>
+	<ejb-ref-name>com.workflow.ejb.wfActivityDirectory</ejb-ref-name>
+	<jndi-name>com.workflow.ejb.wfActivityDirectory</jndi-name>
+   </ejb-ref>
+
+	<ejb-local-ref>
+      <ejb-ref-name>local/HealthInsQuoteManagerBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsQuoteManagerBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsAgentBean114</ejb-ref-name>
+      <local-jndi-name>local/HealthInsAgentBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorQuoteBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorQuoteBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorPlanBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorPlanBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateSheetBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateSheetBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateSheetManagerEJB</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateSheetManagerEJB</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorQuoteBean2_1</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorQuoteBean2_1</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorPlanBean2_1</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorPlanBean2_1</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateBean2_1</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateBean2_1</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateSheetBean2_1</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateSheetBean2_1</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsBeniratorRateSheetManagerEJB2_1</ejb-ref-name>
+      <local-jndi-name>local/HealthInsBeniratorRateSheetManagerEJB2_1</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsManhattanQuoteBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsManhattanQuoteBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsManhattanPlanBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsManhattanPlanBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsManhattanRateBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsManhattanRateBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/HealthInsManhattanRateSheetBean</ejb-ref-name>
+      <local-jndi-name>local/HealthInsManhattanRateSheetBean</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/PRDProductOptionsBean114</ejb-ref-name>
+      <local-jndi-name>local/PRDProductOptionsBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/PRDProductFactorsBean114</ejb-ref-name>
+      <local-jndi-name>local/PRDProductFactorsBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/PRDProductBean114</ejb-ref-name>
+      <local-jndi-name>local/PRDProductBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/PRDProductGroupBean114</ejb-ref-name>
+      <local-jndi-name>local/PRDProductGroupBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/PRDProductFeatureBean114</ejb-ref-name>
+      <local-jndi-name>local/PRDProductFeatureBean114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/LocalUserEJB114</ejb-ref-name>
+      <local-jndi-name>local/LocalUserEJB114</local-jndi-name>
+   </ejb-local-ref>
+
+   <ejb-local-ref>
+      <ejb-ref-name>local/SequenceEJB114</ejb-ref-name>
+      <local-jndi-name>local/SequenceEJB114</local-jndi-name>
+   </ejb-local-ref>
+
+		<ejb-local-ref>
+	        <ejb-ref-name>local/HealthInsBeniratorQuoteBean2_2</ejb-ref-name>
+	        <local-jndi-name>local/HealthInsBeniratorQuoteBean2_2</local-jndi-name>			
+		</ejb-local-ref>
+		<ejb-local-ref>
+	       <ejb-ref-name>local/HealthInsBeniratorPlanBean2_2</ejb-ref-name>
+	       <local-jndi-name>local/HealthInsBeniratorPlanBean2_2</local-jndi-name>
+		</ejb-local-ref>
+		<ejb-local-ref>
+	        <ejb-ref-name>local/HealthInsBeniratorRateBean2_2</ejb-ref-name>
+	        <local-jndi-name>local/HealthInsBeniratorRateBean2_2</local-jndi-name>
+		</ejb-local-ref>
+		<ejb-local-ref>
+	        <ejb-ref-name>local/HealthInsBeniratorRateSheetBean2_2</ejb-ref-name>
+	        <local-jndi-name>local/HealthInsBeniratorRateSheetBean2_2</local-jndi-name>
+		</ejb-local-ref>		
+		<ejb-local-ref>
+	        <ejb-ref-name>local/HealthInsBeniratorRateSheetManagerEJB2_2</ejb-ref-name>
+	        <local-jndi-name>local/HealthInsBeniratorRateSheetManagerEJB2_2</local-jndi-name>
+		</ejb-local-ref>
+		
+		
+		<ejb-local-ref>
+	        <ejb-ref-name>local/PLResPropertyQuoteBean</ejb-ref-name>
+	        <local-jndi-name>local/PLResPropertyQuoteBean</local-jndi-name>			
+		</ejb-local-ref>
+		<ejb-local-ref>
+	       <ejb-ref-name>local/PLResPropertyPlanBean</ejb-ref-name>
+	       <local-jndi-name>local/PLResPropertyPlanBean</local-jndi-name>
+		</ejb-local-ref>
+		<ejb-local-ref>
+	        <ejb-ref-name>local/PLResPropertyRateBean</ejb-ref-name>
+	        <local-jndi-name>local/PLResPropertyRateBean</local-jndi-name>
+		</ejb-local-ref>
+		<ejb-local-ref>
+	        <ejb-ref-name>local/PLResPropertyRateSheetBean</ejb-ref-name>
+	        <local-jndi-name>local/PLResPropertyRateSheetBean</local-jndi-name>
+		</ejb-local-ref>		
+		<ejb-local-ref>
+	        <ejb-ref-name>local/PLResPropertyRateSheetManagerBean</ejb-ref-name>
+	        <local-jndi-name>local/PLResPropertyRateSheetManagerBean</local-jndi-name>
+		</ejb-local-ref>
+
+<!-- Risk Start -->		
+
+		<ejb-local-ref>
+			<ejb-ref-name>local/ResPropertyManagerEJB114</ejb-ref-name>
+			<local-jndi-name>local/ResPropertyManagerEJB114</local-jndi-name>
+		</ejb-local-ref>
+		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/ResPropertyLossHistoryManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/ResPropertyLossHistoryManagerEJB114</local-jndi-name>
+  		</ejb-local-ref>
+  		
+  		<ejb-local-ref>
+        	 <ejb-ref-name>local/ResPropertyAdditionalInterestManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/ResPropertyAdditionalInterestManagerEJB114</local-jndi-name>
+ 		 </ejb-local-ref>
+ 		 
+<!-- Risk End -->		
+<!-- Audit Log Start -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/AuditLogManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/AuditLogManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 
+<!-- Audit Log End -->
+
+<!-- Pdf Management Start -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/PdfEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/PdfEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+
+ 
+<!-- Pdf Management End -->
+
+	<ejb-local-ref>
+        	 <ejb-ref-name>local/TerritoryManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/TerritoryManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+<!-- Document Definition Start -->
+ 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/DocumentDefinitionManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/DocumentDefinitionManagerEJB114</local-jndi-name>
+  		</ejb-local-ref>
+  		
+<!-- Document Definition End -->  	
+
+<!-- Document Mgt module Start -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/DocumentManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/DocumentManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/QuoteDocumentLocationManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/QuoteDocumentLocationManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+		
+<!-- Document Mgt module End -->	
+
+<!-- ***Xml File Upload***START -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/XMLAgencyManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/XMLAgencyManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+ 		<ejb-local-ref>
+        	 <ejb-ref-name>local/XMLAgentManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/XMLAgentManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 
+<!-- ***Xml File Upload***END -->	
+
+<!-- Policy -->
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/PolicyManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/PolicyManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ <!-- Policy -->
+ 
+ <!-- *** Policy Summary Start *** -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/PolicySummaryManagerEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/PolicySummaryManagerEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/PolicyNumberGeneratorEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/PolicyNumberGeneratorEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		 
+<!-- *** Policy Summary End *** -->
+
+<!-- Endorsement Policy Start -->
+
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/InsuredAddPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/InsuredAddPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/InsuredModifyPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/InsuredModifyPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/InsuredDeletePolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/InsuredDeletePolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/AddAdditionalInterestPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/AddAdditionalInterestPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/ModifyAdditionalInterestPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/ModifyAdditionalInterestPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/ModifyPropertyAddressPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/ModifyPropertyAddressPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/MiscNonPremiumBearingPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/MiscNonPremiumBearingPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/CancelPolicyManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/CancelPolicyManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/ReinstatePolicyManageBean</ejb-ref-name>
+        	 <local-jndi-name>local/ReinstatePolicyManageBean</local-jndi-name>
+ 		</ejb-local-ref>
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/AOrECovLmtMgr</ejb-ref-name>
+        	 <local-jndi-name>local/AOrECovLmtMgr</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+ 		 		
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/MiscellaneousPremiumBearingManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/MiscellaneousPremiumBearingManagerBean</local-jndi-name>
+ 		</ejb-local-ref> 		
+ 		
+<!-- Endorsement Policy End --> 
+
+<!-- Renewal start -->
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/RenewalManagerBean</ejb-ref-name>
+        	 <local-jndi-name>local/RenewalManagerBean</local-jndi-name>
+ 		</ejb-local-ref>
+<!-- Renewal End --> 		
+
+<!-- Document Import Start -->
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/DocumentImportEJB114</ejb-ref-name>
+        	 <local-jndi-name>local/DocumentImportEJB114</local-jndi-name>
+ 		</ejb-local-ref>
+<!-- Document Import End --> 
+
+<!-- Billing and payment Start -->
+		<ejb-local-ref>
+        	 <ejb-ref-name>local/PaymentMethodBean114</ejb-ref-name>
+        	 <local-jndi-name>local/PaymentMethodBean114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+ 		<ejb-local-ref>
+        	 <ejb-ref-name>local/BillingTypeBean114</ejb-ref-name>
+        	 <local-jndi-name>local/BillingTypeBean114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+ 		<ejb-local-ref>
+        	 <ejb-ref-name>local/InstallmentTypeBean114</ejb-ref-name>
+        	 <local-jndi-name>local/InstallmentTypeBean114</local-jndi-name>
+ 		</ejb-local-ref>
+ 		
+ 		<ejb-local-ref>
+        	 <ejb-ref-name>local/BillingCurrencyBean114</ejb-ref-name>
+        	 <local-jndi-name>local/BillingCurrencyBean114</local-jndi-name>
+ 		</ejb-local-ref>
+<!-- Billing and payment Start -->
+
+
+		
+		<!-- Version Lookup's Start -->
+		
+			<ejb-local-ref>
+		       <ejb-ref-name>local/PLResPropertyPlanBean1.2.2</ejb-ref-name>
+		       <local-jndi-name>local/PLResPropertyPlanBean1.2.2</local-jndi-name>
+			</ejb-local-ref>
+			
+			<ejb-local-ref>
+		       <ejb-ref-name>local/PLResPropertyQuoteBean1.2.2</ejb-ref-name>
+		       <local-jndi-name>local/PLResPropertyQuoteBean1.2.2</local-jndi-name>
+			</ejb-local-ref>
+			
+			<ejb-local-ref>
+		        <ejb-ref-name>local/PLResPropertyRateBean1.2.2</ejb-ref-name>
+		        <local-jndi-name>local/PLResPropertyRateBean1.2.2</local-jndi-name>
+			</ejb-local-ref>
+			
+			<ejb-local-ref>
+		        <ejb-ref-name>local/PLResPropertyRateSheetBean1.2.2</ejb-ref-name>
+		        <local-jndi-name>local/PLResPropertyRateSheetBean1.2.2</local-jndi-name>
+			</ejb-local-ref>						
+					
+		<!-- Version Lookup's End -->
+				
+
+ 		
+
+   <context-root>/</context-root>  <!--Make what ever context root you want -->
+<virtual-host>liuqa.solartis.net</virtual-host>
+<virtual-host>liuqa.solartis.net</virtual-host>
+<virtual-host>liuqa.solartis.net</virtual-host>
+<virtual-host>10.203.1.123</virtual-host>
+</jboss-web>

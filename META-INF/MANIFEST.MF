@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-RHQ-Sha256: 523e4c75f52bf9451812a159ccd9c6f25237e84bd690d3a7155a49a7fc
- 9b2da5
-Created-By: 1.4.1_01 (Sun Microsystems Inc.)
-

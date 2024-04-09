@@ -1,5 +1,0 @@
-useHttps=false
-allowInsecureLogin=true
-logBase=calendar.log
-defaultIsGuest=true
-cookiesHelpUrl=cal/help/browserb.html#setcook
